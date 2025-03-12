@@ -1,6 +1,6 @@
 <h1 align="center">Welcome</h1>
 
-⦿ This repository belongs to the High-Dimensional Tensor Representation Learning team at the School of Computer and
+⦿ This repository belongs to the High-Dimensional Tensor Representation Learning team at the College of Computer and
 Information Science, Southwest University.
 
 ⦿ It serves as a repository for comparison models, where some of the contrastive models from papers have been
