@@ -1,6 +1,6 @@
-## SPTC算法的复现
+## NT-DPTC算法的复现
 
-其中python文件夹为python版复现，文件内容如下：
+文件夹中为python版复现，文件内容如下：
 - new_iawe_tensor_shape.txt - 数据集的形状大小
 - NT_DPTC.py - 模型代码
 - parameter.txt  ----参数设置
