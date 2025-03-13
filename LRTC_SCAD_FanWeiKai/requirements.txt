@@ -1,0 +1,6 @@
+numpy
+scipy
+ipykernel
+matplotlib
+python>=3.9
+pytorch>=2.0
