@@ -7,6 +7,7 @@ This repository is an implementation of paper "Parallel CCD++ on GPU for Matrix 
 1. CUDA 7.0+
 2. C++
 
+## Citation
 
 If you find this paper useful in your research, please consider citing:
 
