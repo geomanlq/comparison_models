@@ -16,6 +16,7 @@ replicated.
 | [NeAT](./NeAT_XieBoYu)[^4]             |                        Neural Additive Tensor Decomposition for Sparse Tensors                         | Proceedings of the 33rd ACM International Conference on Information and Knowledge Management | 2024.10 <br/> |
 | [NT-DPTC](./NT_DPTC_LiuHua)[^5]        | A non-negative temporal dimension preserved tensorcompletion model for missing traffic data imputation |                                     Information Sciences                                     | 2024.01 <br/> |
 | [TCDP](./TCDP_WuZhiXiang)[^6]          |  Differentially Private Federated Tensor Completion for Cloud–Edge Collaborative AIoT Data Prediction  |                               IEEE Internet of Things Journal                                | 2024.01 <br/> |
+| [SGCP](./SGCP_WangQu)[^6]              |  Tensor Factorization With Sparse and Graph Regularization for Fake News Detection on Social Networks  |                       IEEE Transactions on Computational Social Systems                      | 2024.08 <br/> |
 
 ## Reference
 
