@@ -4,7 +4,7 @@ import argparse
 
 from utils import *
 
-data_name = "BTC"
+data_name = "D1_Abilene"
 model_name = "D-NORM"
 eta = 0.005
 lamda = 0.00001
