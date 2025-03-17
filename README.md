@@ -16,7 +16,7 @@ replicated.
 | [NeAT](./NeAT_XieBoYu)[^4]             |                        Neural Additive Tensor Decomposition for Sparse Tensors                         | Proceedings of the 33rd ACM International Conference on Information and Knowledge Management | 2024.10 <br/> |
 | [NT-DPTC](./NT_DPTC_LiuHua)[^5]        | A non-negative temporal dimension preserved tensorcompletion model for missing traffic data imputation |                                     Information Sciences                                     | 2024.01 <br/> |
 | [TCDP](./TCDP_WuZhiXiang)[^6]          |  Differentially Private Federated Tensor Completion for Cloud–Edge Collaborative AIoT Data Prediction  |                               IEEE Internet of Things Journal                                | 2024.01 <br/> |
-| [SGCP](./SGCP_WangQu)[^6]              |  Tensor Factorization With Sparse and Graph Regularization for Fake News Detection on Social Networks  |                       IEEE Transactions on Computational Social Systems                      | 2024.08 <br/> |
+| [SGCP](./SGCP_WangQu)[^7]              |  Tensor Factorization With Sparse and Graph Regularization for Fake News Detection on Social Networks  |                       IEEE Transactions on Computational Social Systems                      | 2024.08 <br/> |
 
 ## Reference
 
@@ -38,3 +38,6 @@ missing traffic data imputation,” Information Sciences, vol. 556, p. 1–18, J
 [^6]: Z. Yang et al., "Differentially Private Federated Tensor Completion for Cloud–Edge Collaborative AIoT Data
 Prediction," IEEE Internet of Things Journal, vol. 11, no. 1, pp. 256-267, 1 Jan.1,
 2024 [paper link](https://doi.org/10.1109/JIOT.2023.3314460)  
+[^7]: H. Che, B. Pan, M. -F. Leung, Y. Cao and Z. Yan, "Tensor Factorization With Sparse and Graph Regularization
+for Fake News Detection on Social Networks," in IEEE Transactions on Computational Social Systems, vol. 11, no. 4,
+pp. 4888-4898, Aug. 2024, doi: 10.1109/TCSS.2023.3296479.[paper link](https://doi.org/10.1109/JIOT.2023.3314460)
