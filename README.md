@@ -20,8 +20,8 @@ Information Science, Southwest University.
 | [NT-DPTC](./NT_DPTC_LiuHua)[^9]          | A non-negative temporal dimension preserved tensorcompletion model for missing traffic data imputation |                                              Information Sciences                                               | 2024.01 <br/> |
 | [TCDP](./TCDP_WuZhiXiang)[^10]           |  Differentially Private Federated Tensor Completion for Cloud–Edge Collaborative AIoT Data Prediction  |                                         IEEE Internet of Things Journal                                         | 2024.01 <br/> |
 | [GFormer](./GFormer_Zhangchunyang)[^11]  |                                  Graph Transformer for Recommendation                                  | Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval | 2023.07 <br/> |
-| [TPR](./TPR_HeYaping)[^12]               |                      Trp: Trained rank pruning for efficient deep neural networks                      |       2019 Fifth Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS Edition        | 2019.12 <br/> |
-| [BiasTR](./BiasTR_Wyr)[^13]              |                       Tensor Ring decomposition for context-aware recommendation                       |                                        Expert Systems with Applications                                         | 2023.05 <br/> |
+| [BiasTR](./BiasTR_Wyr)[^12]              |                       Tensor Ring decomposition for context-aware recommendation                       |                                        Expert Systems with Applications                                         | 2023.05 <br/> |
+| [TPR](./TPR_HeYaping)[^13]               |                      Trp: Trained rank pruning for efficient deep neural networks                      |       2019 Fifth Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS Edition        | 2019.12 <br/> |
 | [CUMF_CDD++](./CUMF_CCD++_HuQicong)[^14] |                             Parallel CCD++ on GPU for Matrix Factorization                             |                                     Proceedings of the General Purpose GPUs                                     | 2017.02 <br/> |
 
 ## Reference
@@ -60,14 +60,14 @@ Prediction," IEEE Internet of Things Journal, vol. 11, no. 1, pp. 256-267, 1 Jan
 [^11]: C. Li, L. Xia, X. Ren, Y. Ye, Y. Xu, and C. Huang, “Graph Transformer for Recommendation,”
 in Proceedings of the 46th International ACM SIGIR Conference on Research and Development in Information Retrieval,
 Taipei Taiwan:
-ACM, Jul. 2023, pp. 1680–1689. doi: 10.1145/3539618.3591723. [paper link](https://doi.org/10.1145/3539618.3591723)
-[^12]: Y. Xu et al., “Trained Rank Pruning for Efficient Deep Neural Networks,”
-in 2019 Fifth Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS Edition (EMC2-NIPS),
-Vancouver, BC, Canada: IEEE, Dec. 2019, pp. 14–17. doi: 10.1109/EMC2-NIPS53020.2019.00011.
-[paper link](10.1109/EMC2-NIPS53020.2019.00011)  
-[^13]: W. Wang, G. Sun, S. Zhao, Y. Li, and J. Zhao, “Tensor Ring decomposition for context-aware recommendation,”
+ACM, Jul. 2023, pp. 1680–1689. doi: 10.1145/3539618.3591723. [paper link](https://doi.org/10.1145/3539618.3591723)  
+[^12]: W. Wang, G. Sun, S. Zhao, Y. Li, and J. Zhao, “Tensor Ring decomposition for context-aware recommendation,”
 Expert Systems with Applications, vol. 217, p. 119533, May 2023, doi: 10.1016/j.eswa.2023.119533.
 [paper link](https://doi.org/10.1016/j.eswa.2023.119533)  
+[^13]: Y. Xu et al., “Trained Rank Pruning for Efficient Deep Neural Networks,”
+in 2019 Fifth Workshop on Energy Efficient Machine Learning and Cognitive Computing - NeurIPS Edition (EMC2-NIPS),
+Vancouver, BC, Canada: IEEE, Dec. 2019, pp. 14–17. doi: 10.1109/EMC2-NIPS53020.2019.00011.
+[paper link](10.1109/EMC2-NIPS53020.2019.00011)
 [^14]: I. Nisa, A. Sukumaran-Rajam, R. Kunchum, and P. Sadayappan, “Parallel CCD++ on GPU for Matrix Factorization,” in
 Proceedings of the General Purpose GPUs, Austin TX USA: ACM, Feb. 2017, pp. 73–83. doi: 10.1145/3038228.3038240.
 [paper link](https://doi.org/10.1145/3038228.3038240)  
