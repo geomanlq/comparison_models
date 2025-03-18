@@ -1,0 +1,8 @@
+scipy~=1.11.4
+numpy~=1.25.2
+ruptures~=1.1.8
+tensorly~=0.8.1
+einops~=0.7.0
+tqdm~=4.66.1
+torch~=2.1.1
+wandb~=0.16.6

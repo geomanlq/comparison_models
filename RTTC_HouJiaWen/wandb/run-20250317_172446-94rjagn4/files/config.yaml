@@ -1,0 +1,105 @@
+wandb_version: 1
+
+city:
+  desc: null
+  value: t4c-london
+mr1:
+  desc: null
+  value: 0.3
+mr2:
+  desc: null
+  value: 0.1
+mr3:
+  desc: null
+  value: 0.3
+mr4:
+  desc: null
+  value: 0.1
+model:
+  desc: null
+  value: RTTC
+cpt_type:
+  desc: null
+  value: RBF
+mu:
+  desc: null
+  value: 0.1
+lam:
+  desc: null
+  value: 0.1
+xi:
+  desc: null
+  value: 1.0
+gamma:
+  desc: null
+  value: 0.01
+r1:
+  desc: null
+  value: 30
+r2:
+  desc: null
+  value: 9
+r3:
+  desc: null
+  value: 5
+r4:
+  desc: null
+  value: 20
+rho:
+  desc: null
+  value: 1.0e-05
+tau:
+  desc: null
+  value: 1.0
+init:
+  desc: null
+  value: daymean
+maxiter:
+  desc: null
+  value: 10
+warmiter:
+  desc: null
+  value: 20
+epsilon:
+  desc: null
+  value: 0.0001
+incre:
+  desc: null
+  value: 0.05
+seed:
+  desc: null
+  value: 42
+missseed:
+  desc: null
+  value: 33
+device:
+  desc: null
+  value: cpu
+_wandb:
+  desc: null
+  value:
+    python_version: 3.10.16
+    cli_version: 0.16.6
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    start_time: 1742203486.0
+    t:
+      1:
+      - 1
+      - 53
+      - 55
+      2:
+      - 1
+      - 53
+      - 55
+      3:
+      - 13
+      - 16
+      - 23
+      4: 3.10.16
+      5: 0.16.6
+      8:
+      - 3
+      - 5
+      13: windows-amd64

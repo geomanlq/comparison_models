@@ -71,6 +71,7 @@ def initData(inputFile1, inputFile2,inputFile3,separator):
 def get_prediction(S,D,T,a,b,c,i,j,k):
     y_hat = [[0 for _ in range(rank)] for _ in range(rank)]
     result = [[0 for _ in range(rank)] for _ in range(rank)]
+    tmnk = 0
     for r1 in range(rank):
         for r3 in range(rank):
             for r2 in range(rank):
@@ -79,10 +80,10 @@ def get_prediction(S,D,T,a,b,c,i,j,k):
         for r1_prime in range(rank):
             for r3 in range(rank):
                 result[r1][r1_prime] += y_hat[r1][r3] * T[r3][k][r1_prime]
-        tmnk = 0
-        for r1 in range(rank):
-            tmnk += result[r1][r1]
-        tmnk+=a[i]+b[j]+c[k]
+
+    for r1 in range(rank):
+        tmnk += result[r1][r1]
+    tmnk+=a[i]+b[j]+c[k]
     return tmnk
 
 @jit(nopython=True)
@@ -138,35 +139,33 @@ def train(trainData, testData, validData,lambda_,yita):
     everyRoundRMSE2[0] = minRMSE
     everyRoundMAE2[0] = minMAE
     # 使用训练集进行训练
-    for t in range(1, trainRound+1):
+    for t in range(1, trainRound + 1):
         for train_tuple in trainData:
-            i=train_tuple.aID
-            j=train_tuple.bID
-            k=train_tuple.cID
-            train_tuple.valueHat = get_prediction(S,D,T, a, b, c,i,j,k)
-            error=train_tuple.value-train_tuple.valueHat
+            i = train_tuple.aID
+            j = train_tuple.bID
+            k = train_tuple.cID
+            train_tuple.valueHat = get_prediction(S, D, T, a, b, c, i, j, k)
+            error = train_tuple.value - train_tuple.valueHat
             for r1 in range(rank):
                 for r2 in range(rank):
-                    grad = 0.0
+                    grad_s = 0.0
                     for r3 in range(rank):
-                        grad += error * D[r2][j][r3] * T[r3][k][r1]
-                    S[r1][i][r2]+=yita*(grad-lambda_* S[r1][i][r2])
+                        grad_s += error * D[r2][j][r3] * T[r3][k][r1]
+                    S[r1][i][r2] += yita * (grad_s - lambda_ * S[r1][i][r2])
             for r2 in range(rank):
                 for r3 in range(rank):
-                    grad = 0.0
+                    grad_d = 0.0
                     for r1 in range(rank):
-                        grad += error * T[r3][k][r1] * S[r1][i][r2]
-                    D[r2][j][r3] += yita * (grad - lambda_ *D[r2][j][r3])
-
+                        grad_d += error * T[r3][k][r1] * S[r1][i][r2]
             for r3 in range(rank):
                 for r1 in range(rank):
-                    grad = 0.0
+                    grad_t = 0.0
                     for r2 in range(rank):
-                        grad += error * S[r1][i][r2] * D[r2][j][r3]
-                    T[r3][k][r1] += yita * (grad - lambda_ *T[r3][k][r1])
-            a[i]=a[i]+yita*(error-lambda_*a[i])
-            b[j] =b[j] + yita * (error - lambda_ *b[j])
-            c[k] =c[k] + yita * (error - lambda_ *c[k])
+                        grad_t += error * S[r1][i][r2] * D[r2][j][r3]
+                    T[r3][k][r1] += yita * (grad_t - lambda_ * T[r3][k][r1])
+            a[i] = a[i] + yita * (error - lambda_ * a[i])
+            b[j] = b[j] + yita * (error - lambda_ * b[j])
+            c[k] = c[k] + yita * (error - lambda_ * c[k])
         square = 0.0
         abs_count = 0.0
         for test_tuple in testData:

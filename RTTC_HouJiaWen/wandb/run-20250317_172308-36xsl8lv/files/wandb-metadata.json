@@ -1,0 +1,65 @@
+{
+    "os": "Windows-10-10.0.26100-SP0",
+    "python": "3.10.16",
+    "heartbeatAt": "2025-03-17T09:23:10.483398",
+    "startedAt": "2025-03-17T09:23:08.377133",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--city",
+        "t4c-london",
+        "--data_path",
+        "data/",
+        "--cpt_path",
+        "data/changepoints/",
+        "--mr1",
+        "0.3",
+        "--mr2",
+        "0.1",
+        "--mr3",
+        "0.3",
+        "--mr4",
+        "0.1",
+        "--wandb_proj",
+        "rttc",
+        "--save_tensor"
+    ],
+    "state": "running",
+    "program": "D:\\PythonProject\\TPR\\main.py",
+    "codePathLocal": "main.py",
+    "codePath": "main.py",
+    "host": "\u7231\u5403\u7f50\u7f50",
+    "username": "18761",
+    "executable": "D:\\Anaconda\\envs\\TPR\\python.exe",
+    "cpu_count": 14,
+    "cpu_count_logical": 20,
+    "cpu_freq": {
+        "current": 2600.0,
+        "min": 0.0,
+        "max": 2600.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2600.0,
+            "min": 0.0,
+            "max": 2600.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 278.99999618530273,
+            "used": 83.37919235229492
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+            "memory_total": 8585740288
+        }
+    ],
+    "memory": {
+        "total": 31.692092895507812
+    }
+}
