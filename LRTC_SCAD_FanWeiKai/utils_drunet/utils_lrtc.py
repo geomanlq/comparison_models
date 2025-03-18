@@ -27,6 +27,7 @@ def svd_values(mat):
 def svd_(mat):
     # faster SVD
     [m, n] = mat.shape
+    # print(f'mat.shape: {mat.shape}')
     try:
         if 2 * m < n:
             u, s, _ = torch.linalg.svd(mat @ mat.T, full_matrices=False)
@@ -36,8 +37,8 @@ def svd_(mat):
             return u[:, :idx], s[:idx],  torch.diag(1/s[:idx]) @ u[:, :idx].T @ mat
         elif m > 2 * n:
             v, s, u = svd_(mat.T)
-            return u, s, v
-    except: 
+            return u.t(), s, v.t()
+    except:
         pass
     u, s, v = torch.linalg.svd(mat, full_matrices=False)
     return u, s, v

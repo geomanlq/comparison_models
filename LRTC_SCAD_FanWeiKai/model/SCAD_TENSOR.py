@@ -3,78 +3,73 @@ import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 import time
 import torch
-import logging
 import numpy as np
+import pandas as pd
 
-from utils import logger_info
-from utils import compute_rmse, compute_mape
+from utils_drunet.utils import compute_rmse, compute_mape
+from utils_drunet.utils_lrtc import unfolding, folding, shrinkage, svd_
 
-from utils_lrtc import unfolding, folding, shrinkage, svd_
-
-save_dir = ""
-
+# 定义两个输入文件的路径
+file1 = 'E:/resourch1/a_b_diverse/交通数据集\数据集/3-杭州地铁/train_out.txt'
+file2 = 'E:/resourch1/a_b_diverse/交通数据集\数据集/3-杭州地铁/test_out.txt'
+separator = ' '
 
 def svt_scad(mat, tau, gamma=20, lamb=10):
     u, s, v = svd_(mat)
+    # tau = torch.median(s)
     ss = shrinkage(s, [tau, gamma, lamb], mode="scad")
     idx = torch.where(ss > 0)[0]
+    # print(f"u shape: {u.shape}")
+    # print(f"s shape: {s.shape}")
+    # print(f"v shape: {v.shape}")
+    # print(f"ss shape: {ss.shape}")
+    # print(f"idx shape: {idx.shape}")
+    # print(f"u[:, idx] shape: {u[:, idx].shape}")
+    # print(f"torch.diag(ss[idx]) shape: {torch.diag(ss[idx]).shape}")
+    # print(f"v[idx, :] shape: {v[idx, :].shape}")
     return u[:, idx] @ torch.diag(ss[idx]) @ v[idx, :]
 
-
-def read_and_build_tensor(file_paths):
-    """
-    读取多个数据文件并构建张量。
-
-    :param file_paths: 数据文件路径列表
-    :return: 构建好的张量
-    """
+def read_and_build_tensor(file_paths, separator):#构建张量
     # 初始化一个空列表来存储所有文件的数据
     all_data = []
 
     # 遍历文件路径列表，读取每个文件的数据
     for file_path in file_paths:
-        data = np.loadtxt(file_path)
+        data = pd.read_csv(file_path, sep=separator, header=None, engine='python')
         all_data.append(data)
 
     # 将所有数据拼贴在一起
-    data = np.concatenate(all_data, axis=0)
+    data = pd.concat(all_data, axis=0).reset_index(drop=True)
 
     # 提取所有索引并找到最大值以确定张量的维度
-    indices = data[:, :3].astype(int)
-    max_dim1, max_dim2, max_dim3 = np.max(indices, axis=0)
+    indices = data.iloc[:, :3].astype(int).values
+    max_dim1, max_dim2, max_dim3 = indices.max(axis=0)
 
     # 构建张量
     tensor = np.zeros((max_dim1 + 1, max_dim2 + 1, max_dim3 + 1))
 
     # 提取值
-    values = data[:, 3]
+    values = data.iloc[:, 3].values
 
     # 索引赋值
     tensor[indices[:, 0], indices[:, 1], indices[:, 2]] = values
 
     return tensor
 
-
-# 定义两个输入文件的路径
-file1 = 'E:/resourch1/a_b_diverse/交通数据集/数据集/3-杭州地铁/train_out.txt'
-file2 = 'E:/resourch1/a_b_diverse/交通数据集/数据集/3-杭州地铁/test_out.txt'
-
-
 # 读取训练集、测试集和验证集
 file_paths = [file1, file2]
-train_tensor = read_and_build_tensor(file_paths)
+train_tensor = read_and_build_tensor(file_paths, separator)
 file_paths = [file1]
-test_tensor = read_and_build_tensor(file_paths)
+test_tensor = read_and_build_tensor(file_paths, separator)
 print(train_tensor.shape)
 print(test_tensor.shape)
 
-
 def read_test_positions(file_path):
     # 读取数据文件
-    data = np.loadtxt(file_path)
+    df = pd.read_csv(file_path, sep=separator, header=None, engine='python')
 
     # 提取位置索引（前三列）
-    indices = data[:, :3].astype(int)
+    indices = df.iloc[:, :3].astype(int).values
 
     # 分别提取三个维度的位置索引
     dim1_indices = torch.tensor(indices[:, 0])
@@ -83,12 +78,10 @@ def read_test_positions(file_path):
     pos = (dim1_indices, dim2_indices, dim3_indices)
     return pos
 
+pos_test = read_test_positions(file2)
 
-pos_test = read_test_positions(file1)
-
-
-def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb, logger=None, factor=1.05, tol=1e-4,
-                 max_iter=200, checkpoint=1000,errorgap=1e-5):
+def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb,factor=1.05, tol=1e-4,
+                 max_iter=1000, checkpoint=1000,errorgap=1e-5):
     #确保sparse_tensor是PyTorch张量
     if isinstance(sparse_tensor, np.ndarray):
         sparse_tensor = torch.from_numpy(sparse_tensor).float()
@@ -107,13 +100,12 @@ def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb, logger
     dim_k = {k: [sparse_tensor.shape[d] for d in range(dim) if d != k] for k in range(dim)}
 
     M = sparse_tensor.clone()
-    #pos_missing = torch.where(sparse_tensor == 0)
     mean_value = torch.mean(sparse_tensor[sparse_tensor != 0])
     M[pos_test] = mean_value
-    #M[pos_test] = torch.mean(sparse_tensor[pos_train])
 
     # initialize Z3, T3
     Z3 = torch.cat([torch.zeros(1, *sparse_tensor.shape) for _ in range(dim)], dim=0)  # shape: 3 * dim1 * dim2 * dim3
+    print(f'Z3.SHAPE{Z3.shape}')
     T3 = Z3.clone()  # shape: same as Z3
 
     max_value = max(sparse_tensor.max(), 1e4)
@@ -123,15 +115,14 @@ def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb, logger
     # result recorder
     RMSE = torch.zeros(max_iter + 1)
     MAPE = torch.zeros(max_iter + 1)
-    best_rmse = 200
-    best_mae = 200
+    best_rmse = 200.0
+    best_mae = 200.0
     minrmse_round = 0
     minmae_round = 0
-    threshold = 2
+    threshold = 4
     flag_rmse = True
     flag_mae = True
     tr = 0
-
     used_time = 0
     for it in range(max_iter):
 
@@ -140,9 +131,11 @@ def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb, logger
         rmse = compute_rmse(dense_tensor[pos_test], M[pos_test])
         MAPE[it] = mape
         RMSE[it] = rmse
-
+        if it == 0:
+            best_mae = mape
+            best_rmse = rmse
         #if it % checkpoint == 0:
-        logger.info(f"Iter: {it}, MAPE: {mape:.6f}, RMSE: {rmse:.6f}")
+        print(f"Iter: {it}, MAE: {mape:.6f}, RMSE: {rmse:.6f}")
 
         start_time = time.time()
 
@@ -190,33 +183,17 @@ def recover_data(sparse_tensor, dense_tensor, pos_test, rho, gamma, lamb, logger
         flag_rmse = True
         flag_mae = True
 
-
-    # compute the MAPE, RMSE
-    #mape = compute_mape(dense_tensor[pos_test], M[pos_test])
-    #rmse = compute_rmse(dense_tensor[pos_test], M[pos_test])
-    #MAPE[it] = mape
-    #RMSE[it] = rmse
-
-    logger.info(f"Total iteration: {it + 1}, Running time: {used_time:.5f}, Tolerance: {tole * 1e5:.2f}e-5, minrmse_round: {minrmse_round}, minmae_round: {minmae_round}")
-    logger.info(f"Imputation MAPE / RMSE: {best_rmse:.2f} / {best_mae:.2f}.")
+    print(f"Total iteration: {it + 1}, Running time: {used_time:.5f}, Tolerance: {tole * 1e5:.2f}e-5, minrmse_round: {minrmse_round}, minmae_round: {minmae_round}")
+    print(f"Imputation MAE / RMSE: {best_rmse:.2f} / {best_mae:.2f}.")
 
     return M, RMSE[:it + 1], MAPE[:it + 1], used_time
 
-
 initial_rho = 1e-5
 gamma = 1000.
-lamb = 3.
-
-logger_dir = f"scad_contrast_model"
-logging_save_dir = os.path.join(save_dir, logger_dir)
-logger_info(logger_dir, log_path=os.path.join(logging_save_dir, f"completion_results.log"))
-result_logger = logging.getLogger(logger_dir)
-result_logger.info(
-    "--------------------------------------------------------------------------------------------------------")
-result_logger.info(f"initial rho: {initial_rho} \t gamma: {gamma} \t lamb: {lamb}.")
+lamb = 1
+print(f"initial rho: {initial_rho} \t gamma: {gamma} \t lamb: {lamb}.")
 
 M, RMSE, MAPE, used_time = recover_data(
     test_tensor, train_tensor,pos_test,  # data and test mask
-    initial_rho, gamma, lamb,  # algorithm parameters
-    logger=result_logger,  # logger
+    initial_rho, gamma, lamb  # algorithm parameters
 )
