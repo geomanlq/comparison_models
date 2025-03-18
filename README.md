@@ -44,7 +44,7 @@ Oct. 2024, pp. 14–23. doi: 10.1145/3627673.3679833 [paper link](https://doi.or
 [^5]: H. Che, B. Pan, M. -F. Leung, Y. Cao and Z. Yan, "Tensor Factorization With Sparse and Graph Regularization
 for Fake News Detection on Social Networks," in IEEE Transactions on Computational Social Systems, vol. 11, no. 4,
 pp. 4888-4898, Aug. 2024, doi: 10.1109/TCSS.2023.3296479. [paper link](https://doi.org/10.1109/JIOT.2023.3314460)  
-[^6] C. Lyu, Q.-L. Lu, X. Wu, and C. Antoniou, “Tucker factorization-based tensor completion for robust traffic data
+[^6]: C. Lyu, Q.-L. Lu, X. Wu, and C. Antoniou, “Tucker factorization-based tensor completion for robust traffic data
 imputation,” Transportation Research Part C: Emerging Technologies, vol. 160, p. 104502, Mar. 2024,
 doi: 10.1016/j.trc.2024.104502. [paper link](https://doi.org/10.1016/j.trc.2024.104502)
 [^7]: C. Liu, K. Xie, T. Wu, C. Ma, and T. Ma, “Distributed neural tensor completion for network monitoring data
