@@ -1,0 +1,1 @@
+{"train/tolerance": 0.06715250760316849, "_timestamp": 1742203509.7132087, "_runtime": 22.718044757843018, "_step": 21, "train/rmse": 147.24758911132812, "train/mae": 62.1580696105957, "total_iter": 9, "overall_time": 17.654982566833496, "_wandb": {"runtime": 20}}

@@ -1,0 +1,18 @@
+Initialization finished.
+Init, rmse = 149.5815, mae = 72.7318, obj = 43442200.0000
+
+
+
+
+
+
+
+Iter 10
+Traceback (most recent call last):
+  File "D:\PythonProject\TPR\main.py", line 242, in <module>
+    meta_objective(
+  File "D:\PythonProject\TPR\main.py", line 225, in meta_objective
+    np.save(output_dir / save_file, yhat)
+  File "D:\Anaconda\envs\TPR\lib\site-packages\numpy\lib\npyio.py", line 542, in save
+    file_ctx = open(file, "wb")
+FileNotFoundError: [Errno 2] No such file or directory: 'out\\yhat_t4c-london-30-9-5-20.npy'

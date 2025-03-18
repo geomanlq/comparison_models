@@ -3,7 +3,7 @@
 ⦿ This repository belongs to the High-Dimensional Tensor Representation Learning team at the College of Computer and
 Information Science, Southwest University.
 
-⦿ It serves as a repository for comparison models and all available models are listed in the table. The paper references and links are all listed at the bottom of this file.
+⦿ It serves as a repository for comparison models and all available models are listed in the table. The references and links are all listed at the bottom of this file.
 
 ## Available Algorithms
 

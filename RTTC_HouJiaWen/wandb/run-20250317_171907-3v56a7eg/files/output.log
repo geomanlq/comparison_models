@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "D:\PythonProject\TPR\main.py", line 241, in <module>
+    meta_objective(
+  File "D:\PythonProject\TPR\main.py", line 173, in meta_objective
+    imputer = TuckerADMM(
+  File "D:\PythonProject\TPR\rttc\model\rttc.py", line 109, in __init__
+    self.dense_tensor = tl.tensor(dense_tensor).to(device)
+  File "D:\Anaconda\envs\TPR\lib\site-packages\torch\cuda\__init__.py", line 289, in _lazy_init
+    raise AssertionError("Torch not compiled with CUDA enabled")
+AssertionError: Torch not compiled with CUDA enabled

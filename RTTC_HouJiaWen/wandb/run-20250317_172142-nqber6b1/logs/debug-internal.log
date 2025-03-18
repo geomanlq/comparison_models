@@ -1,0 +1,53 @@
+2025-03-17 17:21:42,273 INFO    StreamThr :37476 [internal.py:wandb_internal():86] W&B internal server running at pid: 37476, started at: 2025-03-17 17:21:42.272279
+2025-03-17 17:21:42,276 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: status
+2025-03-17 17:21:42,281 INFO    WriterThread:37476 [datastore.py:open_for_write():87] open: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\run-nqber6b1.wandb
+2025-03-17 17:21:42,282 DEBUG   SenderThread:37476 [sender.py:send():379] send: header
+2025-03-17 17:21:42,283 DEBUG   SenderThread:37476 [sender.py:send():379] send: run
+2025-03-17 17:21:43,033 INFO    SenderThread:37476 [dir_watcher.py:__init__():211] watching files in: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files
+2025-03-17 17:21:43,035 INFO    SenderThread:37476 [sender.py:_start_run_threads():1124] run started: nqber6b1 with start time 1742203302.275279
+2025-03-17 17:21:43,039 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: check_version
+2025-03-17 17:21:43,039 DEBUG   SenderThread:37476 [sender.py:send_request():406] send_request: check_version
+2025-03-17 17:21:44,484 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: run_start
+2025-03-17 17:21:44,506 DEBUG   HandlerThread:37476 [system_info.py:__init__():26] System info init
+2025-03-17 17:21:44,506 DEBUG   HandlerThread:37476 [system_info.py:__init__():41] System info init done
+2025-03-17 17:21:44,507 INFO    HandlerThread:37476 [system_monitor.py:start():194] Starting system monitor
+2025-03-17 17:21:44,507 INFO    SystemMonitor:37476 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2025-03-17 17:21:44,507 INFO    HandlerThread:37476 [system_monitor.py:probe():214] Collecting system info
+2025-03-17 17:21:44,512 INFO    SystemMonitor:37476 [interfaces.py:start():190] Started cpu monitoring
+2025-03-17 17:21:44,512 INFO    SystemMonitor:37476 [interfaces.py:start():190] Started disk monitoring
+2025-03-17 17:21:44,513 INFO    SystemMonitor:37476 [interfaces.py:start():190] Started gpu monitoring
+2025-03-17 17:21:44,517 DEBUG   HandlerThread:37476 [system_info.py:probe():150] Probing system
+2025-03-17 17:21:44,526 INFO    SystemMonitor:37476 [interfaces.py:start():190] Started memory monitoring
+2025-03-17 17:21:44,534 INFO    SystemMonitor:37476 [interfaces.py:start():190] Started network monitoring
+2025-03-17 17:21:44,535 DEBUG   HandlerThread:37476 [gitlib.py:_init_repo():56] git repository is invalid
+2025-03-17 17:21:44,535 DEBUG   HandlerThread:37476 [system_info.py:probe():198] Probing system done
+2025-03-17 17:21:44,535 DEBUG   HandlerThread:37476 [system_monitor.py:probe():223] {'os': 'Windows-10-10.0.26100-SP0', 'python': '3.10.16', 'heartbeatAt': '2025-03-17T09:21:44.526549', 'startedAt': '2025-03-17T09:21:42.263281', 'docker': None, 'cuda': None, 'args': ('--city', 't4c-london', '--data_path', 'data/', '--cpt_path', 'data/changepoints/', '--mr1', '0.3', '--mr2', '0.1', '--mr3', '0.3', '--mr4', '0.1', '--wandb_proj', 'rttc', '--save_tensor'), 'state': 'running', 'program': 'D:\\PythonProject\\TPR\\main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'host': '°®³Ô¹Þ¹Þ', 'username': '18761', 'executable': 'D:\\Anaconda\\envs\\TPR\\python.exe', 'cpu_count': 14, 'cpu_count_logical': 20, 'cpu_freq': {'current': 2600.0, 'min': 0.0, 'max': 2600.0}, 'cpu_freq_per_core': [{'current': 2600.0, 'min': 0.0, 'max': 2600.0}], 'disk': {'/': {'total': 278.99999618530273, 'used': 83.37983322143555}}, 'gpu': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'gpu_count': 1, 'gpu_devices': [{'name': 'NVIDIA GeForce RTX 4060 Laptop GPU', 'memory_total': 8585740288}], 'memory': {'total': 31.692092895507812}}
+2025-03-17 17:21:44,535 INFO    HandlerThread:37476 [system_monitor.py:probe():224] Finished collecting system info
+2025-03-17 17:21:44,535 INFO    HandlerThread:37476 [system_monitor.py:probe():227] Publishing system info
+2025-03-17 17:21:44,535 DEBUG   HandlerThread:37476 [system_info.py:_save_conda():207] Saving list of conda packages installed into the current environment
+2025-03-17 17:21:45,045 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_created():271] file/dir created: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\conda-environment.yaml
+2025-03-17 17:21:46,673 DEBUG   HandlerThread:37476 [system_info.py:_save_conda():222] Saving conda packages done
+2025-03-17 17:21:46,674 INFO    HandlerThread:37476 [system_monitor.py:probe():229] Finished publishing system info
+2025-03-17 17:21:46,676 DEBUG   SenderThread:37476 [sender.py:send():379] send: files
+2025-03-17 17:21:46,677 INFO    SenderThread:37476 [sender.py:_save_file():1390] saving file wandb-metadata.json with policy now
+2025-03-17 17:21:46,733 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: python_packages
+2025-03-17 17:21:46,733 DEBUG   SenderThread:37476 [sender.py:send_request():406] send_request: python_packages
+2025-03-17 17:21:46,734 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: stop_status
+2025-03-17 17:21:46,734 DEBUG   SenderThread:37476 [sender.py:send_request():406] send_request: stop_status
+2025-03-17 17:21:46,735 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: internal_messages
+2025-03-17 17:21:47,058 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\conda-environment.yaml
+2025-03-17 17:21:47,058 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_created():271] file/dir created: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\requirements.txt
+2025-03-17 17:21:47,058 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_created():271] file/dir created: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\wandb-metadata.json
+2025-03-17 17:21:47,238 DEBUG   SenderThread:37476 [sender.py:send():379] send: telemetry
+2025-03-17 17:21:48,207 DEBUG   HandlerThread:37476 [handler.py:handle_request():146] handle_request: status_report
+2025-03-17 17:21:48,413 INFO    wandb-upload_0:37476 [upload_job.py:push():131] Uploaded file C:\Users\18761\AppData\Local\Temp\tmprhuhksfvwandb\r98il26r-wandb-metadata.json
+2025-03-17 17:21:49,074 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_created():271] file/dir created: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\output.log
+2025-03-17 17:21:50,545 INFO    cpu       :37476 [interfaces.py:monitor():140] Process cpu has exited.
+2025-03-17 17:21:50,545 DEBUG   SystemMonitor:37476 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2025-03-17 17:21:50,545 DEBUG   SystemMonitor:37476 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2025-03-17 17:21:50,545 DEBUG   SystemMonitor:37476 [system_monitor.py:_start():183] Publishing last batch of metrics
+2025-03-17 17:21:50,547 DEBUG   SenderThread:37476 [sender.py:send():379] send: stats
+2025-03-17 17:21:51,093 INFO    Thread-16 :37476 [dir_watcher.py:_on_file_modified():288] file/dir modified: D:\PythonProject\TPR\wandb\run-20250317_172142-nqber6b1\files\output.log
+2025-03-17 17:21:51,348 WARNING StreamThr :37476 [internal.py:is_dead():414] Internal process exiting, parent pid 6820 disappeared
+2025-03-17 17:21:51,348 ERROR   StreamThr :37476 [internal.py:wandb_internal():152] Internal process shutdown.
+2025-03-17 17:21:51,544 INFO    MainThread:37476 [internal.py:handle_exit():76] Internal process exited
