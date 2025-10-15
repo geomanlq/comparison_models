@@ -12,7 +12,7 @@ links are all listed at the bottom of this file.
 |:-----------------------------------------|:------------------------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------------:|:--------------|
 | [LRTC_SCAD](./LRTC_SCAD_FanWeiKai)[^1]   |               Low-Rank and Deep Plug-and-Play Priors for Missing Traffic Data Imputation               |                             IEEE Transactions on Intelligent Transportation Systems                             | 2025.02 <br/> |
 | [LCR](./LCR_YangLei)[^2]                 |               Laplacian Convolutional Representation for Traffic Time Series Imputation                |                               IEEE Transactions on Knowledge and Data Engineering                               | 2024.11 <br/> |
-| [NeAT](./GDI_XiaYongHui)[^3]             |    GDI: A Novel IoT Device Identification Framework via Graph Neural Network-Based Tensor Completion   |                                   IEEE Transactions on Services Computing                                       | 2024.11 <br/> |
+| [GDI](./GDI_XiaYongHui)[^3]             |    GDI: A Novel IoT Device Identification Framework via Graph Neural Network-Based Tensor Completion   |                                   IEEE Transactions on Services Computing                                       | 2024.11 <br/> |
 | [SPTC](./SPTC_LiuQian)[^4]               |             A generalizable framework for low-rank tensor completion with numerical priors             |                                               Pattern Recognition                                               | 2024.11 <br/> |
 | [NeAT](./NeAT_XieBoYu)[^5]               |                        Neural Additive Tensor Decomposition for Sparse Tensors                         |          Proceedings of the 33rd ACM International Conference on Information and Knowledge Management           | 2024.10 <br/> |
 | [SGCP](./SGCP_WangQu)[^6]                |  Tensor Factorization With Sparse and Graph Regularization for Fake News Detection on Social Networks  |                                IEEE Transactions on Computational Social Systems                                | 2024.08 <br/> |
@@ -82,6 +82,7 @@ Vancouver, BC, Canada: IEEE, Dec. 2019, pp. 14–17. doi: 10.1109/EMC2-NIPS53020
 [^16]: I. Nisa, A. Sukumaran-Rajam, R. Kunchum, and P. Sadayappan, “Parallel CCD++ on GPU for Matrix Factorization,” in
 Proceedings of the General Purpose GPUs, Austin TX USA: ACM, Feb. 2017, pp. 73–83. doi: 10.1145/3038228.3038240.
 [paper link](https://doi.org/10.1145/3038228.3038240)  
+
 
 
 
