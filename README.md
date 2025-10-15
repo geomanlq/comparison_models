@@ -38,8 +38,8 @@ Imputation," in IEEE Transactions on Knowledge and Data Engineering, vol. 36, no
 doi: 10.1109/TKDE.2024.3419698 [paper link](https://doi.org/10.1109/TKDE.2024.3419698)   
 [^3]: H. Wang, K. Xie, X. Wang, J. Wen, R. Xie, Z. Diao, W. Liang, G. Xie, and J. Cao, “GDI: A Novel IoT Device 
 Identification Framework via Graph Neural Network-Based Tensor Completion,” 
-IEEE Transactions on Services Computing, vol. 17, no. 6, Nov.–Dec. 2024. [paper link](https://doi.org/10.1109/TSC.2024.3463496)
-doi: 10.1109/TSC.2024.3463496 [paper link](https://doi.org/10.1109/TITS.2024.3493864)  
+IEEE Transactions on Services Computing, vol. 17, no. 6, Nov.–Dec. 2024.
+doi: 10.1109/TSC.2024.3463496[paper link](https://doi.org/10.1109/TSC.2024.3463496)
 [^4]: S. Yuan and K. Huang, “A generalizable framework for low-rank tensor completion with numerical priors,” Pattern
 Recognition, vol. 155, p. 110678, Nov. 2024,
 doi: 10.1016/j.patcog.2024.110678 [paper link](https://doi.org/10.1016/j.patcog.2024.110678)  
@@ -82,6 +82,7 @@ Vancouver, BC, Canada: IEEE, Dec. 2019, pp. 14–17. doi: 10.1109/EMC2-NIPS53020
 [^16]: I. Nisa, A. Sukumaran-Rajam, R. Kunchum, and P. Sadayappan, “Parallel CCD++ on GPU for Matrix Factorization,” in
 Proceedings of the General Purpose GPUs, Austin TX USA: ACM, Feb. 2017, pp. 73–83. doi: 10.1145/3038228.3038240.
 [paper link](https://doi.org/10.1145/3038228.3038240)  
+
 
 
 
