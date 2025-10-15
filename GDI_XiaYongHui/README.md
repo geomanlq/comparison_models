@@ -1,0 +1,1 @@
+文献来源：H. Wang, K. Xie, X. Wang, J. Wen, R. Xie, Z. Diao, W. Liang, G. Xie, and J. Cao, “GDI: A Novel IoT Device Identification Framework via Graph Neural Network-Based Tensor Completion,” IEEE Transactions on Services Computing, vol. 17, no. 6, Nov.–Dec. 2024.
