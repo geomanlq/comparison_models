@@ -6,7 +6,7 @@ Information Science, Southwest University.
 ⦿ It serves as a repository for comparison models and all available models are listed in the table. The references and
 links are all listed at the bottom of this file.
 
-⦿ Among the algorithms listed in the table, some papers do not provide source code. The team members have reproduced them. Please check the correctness of the code when using it. This repository does not guarantee that all the code is completely accurate.
+⦿ For algorithms listed in the table where the original papers did not provide source code, our team has re-implemented them based on their descriptions. Please verify the correctness of this code before use, as this repository does not guarantee that all implementations are completely accurate.
 ## Available Algorithms
 
 | **Algorithm**                            |                                            **Paper Title**                                             |                                             **Journal/Conference**                                              | **Year**      |
@@ -83,6 +83,7 @@ Vancouver, BC, Canada: IEEE, Dec. 2019, pp. 14–17. doi: 10.1109/EMC2-NIPS53020
 [^16]: I. Nisa, A. Sukumaran-Rajam, R. Kunchum, and P. Sadayappan, “Parallel CCD++ on GPU for Matrix Factorization,” in
 Proceedings of the General Purpose GPUs, Austin TX USA: ACM, Feb. 2017, pp. 73–83. doi: 10.1145/3038228.3038240.
 [paper link](https://doi.org/10.1145/3038228.3038240)  
+
 
 
 
